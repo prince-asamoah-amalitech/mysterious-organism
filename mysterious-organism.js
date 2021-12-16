@@ -22,9 +22,9 @@ const pAequorFactory = (number, dnaBase) => {
     dna: dnaBase,
     mutate() {
       let randomIndex = Math.floor(Math.random() * this.dna.length);
-      console.log(randomIndex);
+      // console.log(randomIndex);
       let randomSelectedBase = this.dna[randomIndex];
-      console.log('Selected Base: ', randomSelectedBase);
+      // console.log('Selected Base: ', randomSelectedBase);
       let randomBase = returnRandBase();
 
       while (this.dna[randomIndex] === randomBase) {
@@ -32,7 +32,7 @@ const pAequorFactory = (number, dnaBase) => {
         randomBase = newRandomBase;
       }
       this.dna[randomIndex] = randomBase;
-      console.log('New Base: ', randomBase);
+      // console.log('New Base: ', randomBase);
       return this.dna;
     },
     compareDNA(pAequor) {
@@ -57,7 +57,6 @@ const pAequorFactory = (number, dnaBase) => {
         }
       }
       survivalRate = (cGCount / this.dna.length) * 100;
-      // survivalRate.toFixed();
       return survivalRate.toFixed() >= 60 ? true : false;
     },
     complementStrand() {
@@ -101,7 +100,7 @@ const pAequorThatCanSurvive = numOfpAequors => {
 let pAequor1 = pAequorFactory(1, mockUpStrand());
 let pAequor2 = pAequorFactory(2, mockUpStrand());
 console.log(`Specimen ${pAequor1.specimenNum}: `, pAequor1.dna);
-console.log(`Mutated Specimen ${pAequor1.specimenNum}: `, pAequor1.mutate());
+// console.log(`Mutated Specimen ${pAequor1.specimenNum}: `, pAequor1.mutate());
 // console.log(`Specimen ${pAequor2.specimenNum}`, pAequor2.dna);
 // console.log(pAequor1.compareDNA(pAequor2));
 // console.log(pAequor1.willLikelySurvive());
