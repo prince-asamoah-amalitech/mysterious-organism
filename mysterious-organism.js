@@ -27,22 +27,12 @@ const pAequorFactory = (number, dnaBase) => {
       console.log('Selected Base: ', randomSelectedBase);
       let randomBase = returnRandBase();
 
-      if (randomSelectedBase === randomBase) {
-        do {
-          let newRandomBase = returnRandBase();
-          randomBase = newRandomBase;
-          console.log('New Base: ', randomBase);
-        } while (randomBase === randomSelectedBase)
-      } else {
-        randomSelectedBase = randomBase;
-        console.log('New Base: ', randomSelectedBase);
+      while (this.dna[randomIndex] === randomBase) {
+        let newRandomBase = returnRandBase();
+        randomBase = newRandomBase;
       }
-
-      // while (randomSelectedBase === randomBase) {
-      //   let newRandomBase = returnRandBase();
-      //   randomSelectedBase = newRandomBase;
-      //   console.log(randomSelectedBase);
-      // }
+      this.dna[randomIndex] = randomBase;
+      console.log('New Base: ', randomBase);
       return this.dna;
     },
     compareDNA(pAequor) {
